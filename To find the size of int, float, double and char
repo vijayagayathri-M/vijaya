@@ -1,5 +1,6 @@
 #include <stdio.h>
-int main(){
+int main()
+{
 printf("Size of int: %u
 bytes\n", sizeof(int));
 printf("Size of float: %u
