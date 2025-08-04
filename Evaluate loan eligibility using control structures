@@ -1,0 +1,66 @@
+#include <stdio.h>
+int main() 
+{
+ float salary;
+ int creditScore, loanType;
+ float maxLoanAmount;
+ printf("Enter your monthly salary: ");
+ scanf("%f", &salary);
+ printf("Enter your credit score (0-850): ");
+ scanf("%d", &creditScore);
+ printf("Select loan type:\n");
+ printf("1. Home Loan\n");
+ printf("2. Personal Loan\n");
+ printf("3. Car Loan\n");
+ printf("Enter your choice (1-3): ");
+ scanf("%d", &loanType);
+ if (creditScore < 600) 
+ {
+ printf("Sorry, your credit score is too low to sanction a loan.\n");
+ } else 
+ {
+ switch (loanType) 
+ {
+ case 1: 
+ if (salary >= 30000) 
+ {
+ maxLoanAmount = 30 * salary;
+ } else 
+ {
+ maxLoanAmount = 20 * salary;
+}
+printf("You are eligible for a home loan up to: $%.2f\n", maxLoanAmount);
+ break;
+ case 2:
+ if (salary >= 20000) 
+ {
+ maxLoanAmount = 10 * salary;
+ } else 
+ {
+ maxLoanAmount = 5 * salary;
+ }
+ printf("You are eligible for a personal loan up to: $%.2f\n", maxLoanAmount);
+ break;
+ case 3:
+ if (salary >= 15000) 
+ {
+ maxLoanAmount = 8 * salary;
+ } else {
+ maxLoanAmount = 4 * salary;
+ }
+ printf("You are eligible for a car loan up to: $%.2f\n", maxLoanAmount);
+ break;
+ default:
+ printf("Invalid loan type selected.\n");
+ break;
+ }
+ if (creditScore >= 750) 
+ {
+ printf("You qualify for a low interest rate.\n");
+ } else 
+ {
+ printf("You qualify for a standard interest rate.\n");
+ }
+ }
+ return 0;
+}
